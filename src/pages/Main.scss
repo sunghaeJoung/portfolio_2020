@@ -1,0 +1,164 @@
+.mainBig {
+  height: 100%;
+  position: relative;
+  .main {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img {
+      width: 430px;
+      height: auto;
+    }
+    .mainTxt {
+      animation: fadeIn 1.8s 0.8s ease-in-out 1 forwards;
+      opacity: 0;
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+      text-align: center;
+      font-size: 36px;
+      font-weight: bold;
+      position: absolute;
+      bottom: 50%;
+    }
+    .mainLine {
+      width: 2px;
+      height: 320px;
+      position: absolute;
+      bottom: 80px;
+      background-color: black;
+      animation: showUp 1s;
+      @keyframes showUp {
+        from {
+          height: 0;
+        }
+        to {
+          height: 320px;
+        }
+      }
+    }
+  }
+
+  // <-------------------- button 스타일값 -------------------->
+
+  .btnLeft {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 3.7px;
+    cursor: pointer;
+    position: fixed;
+    top: 45%;
+    transform: rotate(-90deg);
+  }
+  .btnRight {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 3.7px;
+    cursor: pointer;
+    position: fixed;
+    top: 45%;
+    transform: rotate(90deg);
+    right: 0;
+  }
+  .btnLeft:hover {
+    animation: moveBtn 0.6s ease-in 1 forwards;
+    @keyframes moveBtn {
+      0% {
+        transform: translateY(0) rotate(-90deg);
+        text-decoration: none;
+      }
+      50% {
+        transform: translateY(4px) rotate(-90deg);
+        text-decoration: none;
+      }
+      100% {
+        transform: translateY(0) rotate(-90deg);
+        text-decoration: line-through;
+      }
+    }
+  }
+  .btnRight:hover {
+    animation: moveBtn1 0.6s ease-in 1 forwards;
+    @keyframes moveBtn1 {
+      0% {
+        transform: translateY(0) rotate(90deg);
+        text-decoration: none;
+      }
+      50% {
+        transform: translateY(4px) rotate(90deg);
+        text-decoration: none;
+      }
+      100% {
+        transform: translateY(0) rotate(90deg);
+        text-decoration: line-through;
+      }
+    }
+  }
+
+  // <-------------------- contact 스타일값 -------------------->
+
+  footer {
+    width: 100%;
+    position: fixed;
+    height: 65px;
+    bottom: 0;
+    margin-left: 2.5%;
+
+    .contact {
+      background-color: #fff;
+      width: 95%;
+      height: 130px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 3.7px;
+      cursor: pointer;
+      .contact-txt {
+        height: 65px;
+        padding: 15px 10px;
+        text-align: center;
+      }
+      .contact-detail {
+        height: 65px;
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        padding: 0 20px;
+        .email {
+          position: absolute;
+          left: 42%;
+        }
+        a {
+          padding: 5px;
+          color: black;
+          .icon {
+            width: 16px;
+            height: auto;
+          }
+        }
+        .txt {
+          font-weight: 400;
+        }
+      }
+    }
+  }
+}
+
+// click하면 올라오는 애니메이션
+//transform은  요소를 지정 시간동안 위치를 이동시키는 속성
+//처음 contact 상자의 높이값을 반만 보이게 지정한 뒤, 클릭하면 goUp클래스를 추가하여 높이를 높여준다!
+.goUp {
+  transform: translateY(-55px);
+  transition: transform 0.6s ease-out;
+}
+
+.goDown {
+  transform: translateY(0px);
+  transition: transform 0.6s ease-out;
+}

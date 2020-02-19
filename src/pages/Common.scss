@@ -1,0 +1,13 @@
+@import url("https://fonts.googleapis.com/css?family=Didact+Gothic&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body,
+#root {
+  width: 100%;
+  height: 100vh;
+  font-family: "Didact Gothic", serif;
+  background-color: #e7e7e7;
+}
