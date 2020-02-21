@@ -7,7 +7,7 @@ import aboutImg from "../images/about-img.jpg";
 class About extends Component {
   render() {
     return (
-      <div className="about">
+      <div className={`about ${this.props.about ? "openAbout" : "closeAbout"}`}>
         <div className="aboutMain">
           <img src={aboutImg}></img>
           <div className="aboutTxt">
@@ -21,8 +21,6 @@ class About extends Component {
             projects or freelance commissions.
           </div>
         </div>
-        <span className="btnL">CLOSE</span>
-        <span className="btnR">ABOUT</span>
       </div>
     );
   }

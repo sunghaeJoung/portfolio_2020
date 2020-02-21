@@ -2,18 +2,17 @@
   background-color: #e7e7e7;
   width: 100%;
   height: 100%;
-  position: fixed;
+  position: absolute;
   top: 0;
-  right: -100%;
-  //   transform: translateX(-100%);
-  //   transition: transform 1s ease-out;
+  right: -100vw;
+  // display: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   .aboutMain {
     display: flex;
-    justify-content: center;
     align-items: center;
-    padding-bottom: 20%;
-    padding-top: 20%;
 
     img {
       width: 490px;
@@ -26,42 +25,17 @@
       padding-left: 20px;
     }
   }
-
-  .btnL {
-    font-size: 12px;
-    font-weight: 600;
-    letter-spacing: 3.7px;
-    cursor: pointer;
-    position: absolute;
-    top: 45%;
-    transform: rotate(-90deg);
-  }
-  .btnR {
-    font-size: 12px;
-    font-weight: 600;
-    letter-spacing: 3.7px;
-    cursor: pointer;
-    position: absolute;
-    top: 45%;
-    transform: rotate(90deg);
-    right: 0;
-    text-decoration: line-through;
-  }
 }
-.btnL:hover {
-  animation: moveBtn 0.6s ease-in 1 forwards;
-  @keyframes moveBtn {
-    0% {
-      transform: translateY(0) rotate(-90deg);
-      text-decoration: none;
-    }
-    50% {
-      transform: translateY(4px) rotate(-90deg);
-      text-decoration: none;
-    }
-    100% {
-      transform: translateY(0) rotate(-90deg);
-      text-decoration: line-through;
-    }
-  }
+
+//about 클릭할때마다 추가되는 스타일값
+//클래스명이 기존 태그에 더하고 빠질때에는 클래스쓸때, 따로 빼주기!
+
+.openAbout {
+  transform: translateX(0);
+  transition: transform 1s ease-out;
+}
+
+.closeAbout {
+  transform: translateX(-100vw);
+  transition: transform 1s ease-out;
 }

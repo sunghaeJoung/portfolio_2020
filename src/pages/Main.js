@@ -11,9 +11,16 @@ class Main extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      mode: false
+      mode: false,
+      about: true
     };
   }
+
+  openAbout = () => {
+    this.setState({
+      about: !this.state.about
+    });
+  };
 
   showDetail = () => {
     this.setState({
@@ -29,8 +36,21 @@ class Main extends Component {
 
   render() {
     return (
-      <div className="mainBig">
-        <div className="main">
+      <div className="main">
+        <footer className="btn">
+          {/* about이랑 프로젝트 페이지 이동 */}
+          <span onClick={this.openAbout} className="btnRight">
+            ABOUT
+          </span>
+
+          <span className="btnLeft">PROJECT</span>
+        </footer>
+
+        <div
+          className={`mainBig ${
+            this.state.about ? "whenCloseAbout " : "whenOpenAbout"
+          }`}
+        >
           <img src={mainImg}></img>
           <div className="mainTxt">
             <div>Hello</div>
@@ -40,12 +60,10 @@ class Main extends Component {
           <div className="mainLine"></div>
         </div>
 
-        {/* about이랑 프로젝트 페이지 이동 */}
-        <span onClick={this.goToAbout} className="btnRight">
-          ABOUT
-        </span>
-        <span className="btnLeft">PROJECT</span>
-        <About />
+        {/* 버튼 누르면 about이 등장*/}
+        <About about={this.state.about} />
+        {/* <div>{!this.state.about && <About about={this.state.about} />}</div> */}
+
         {/* 하단 contact 박스 */}
         <footer
           onClick={this.showDetail}

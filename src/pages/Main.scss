@@ -1,9 +1,10 @@
-.mainBig {
-  height: 100%;
+.main {
+  height: 100vh;
   position: relative;
-  .main {
-    width: 100%;
+  overflow: hidden;
+  .mainBig {
     height: 100%;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -45,9 +46,58 @@
       }
     }
   }
+  // <-------------------- contact 스타일값 -------------------->
 
-  // <-------------------- button 스타일값 -------------------->
+  footer {
+    width: 100%;
+    position: fixed;
+    height: 65px;
+    bottom: 0;
+    margin-left: 2.5%;
+    z-index: 999;
 
+    .contact {
+      background-color: #fff;
+      width: 95%;
+      height: 130px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 3.7px;
+      cursor: pointer;
+      .contact-txt {
+        height: 65px;
+        padding: 15px 10px;
+        text-align: center;
+      }
+      .contact-detail {
+        height: 65px;
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        padding: 0 20px;
+        .email {
+          position: absolute;
+          left: 42%;
+        }
+        a {
+          padding: 5px;
+          color: black;
+          .icon {
+            width: 16px;
+            height: auto;
+          }
+        }
+        .txt {
+          font-weight: 400;
+        }
+      }
+    }
+  }
+}
+
+// <-------------------- button 스타일값 -------------------->
+.btn {
+  z-index: 999;
   .btnLeft {
     font-size: 12px;
     font-weight: 600;
@@ -101,53 +151,6 @@
       }
     }
   }
-
-  // <-------------------- contact 스타일값 -------------------->
-
-  footer {
-    width: 100%;
-    position: fixed;
-    height: 65px;
-    bottom: 0;
-    margin-left: 2.5%;
-
-    .contact {
-      background-color: #fff;
-      width: 95%;
-      height: 130px;
-      font-size: 12px;
-      font-weight: 600;
-      letter-spacing: 3.7px;
-      cursor: pointer;
-      .contact-txt {
-        height: 65px;
-        padding: 15px 10px;
-        text-align: center;
-      }
-      .contact-detail {
-        height: 65px;
-        position: relative;
-        display: flex;
-        justify-content: space-between;
-        padding: 0 20px;
-        .email {
-          position: absolute;
-          left: 42%;
-        }
-        a {
-          padding: 5px;
-          color: black;
-          .icon {
-            width: 16px;
-            height: auto;
-          }
-        }
-        .txt {
-          font-weight: 400;
-        }
-      }
-    }
-  }
 }
 
 // click하면 올라오는 애니메이션
@@ -161,4 +164,14 @@
 .goDown {
   transform: translateY(0px);
   transition: transform 0.6s ease-out;
+}
+
+.whenOpenAbout {
+  transform: translateX(-100vw);
+  transition: transform 1s ease-out;
+}
+
+.whenCloseAbout {
+  transform: translateX(0px);
+  transition: transform 1s ease-out;
 }
