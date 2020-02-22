@@ -1,0 +1,26 @@
+.project {
+  background-color: #e7e7e7;
+  width: 100%;
+  height: 100%;
+
+  .projectMain {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: -100vw;
+    display: flex;
+
+    .nav {
+      width: 30vw;
+      height: 100%;
+      background-color: white;
+    }
+
+    .detail {
+      width: 70vw;
+      height: 100%;
+      background-color: rgb(253, 237, 234);
+    }
+  }
+}

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "../pages/Common.scss";
+import "../styles/Common.scss";
 import "./About.scss";
 
 import aboutImg from "../images/about-img.jpg";
@@ -7,7 +7,7 @@ import aboutImg from "../images/about-img.jpg";
 class About extends Component {
   render() {
     return (
-      <div className={`about ${this.props.about ? "openAbout" : "closeAbout"}`}>
+      <div className="about">
         <div className="aboutMain">
           <img src={aboutImg}></img>
           <div className="aboutTxt">

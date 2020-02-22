@@ -3,51 +3,55 @@
   position: relative;
   overflow: hidden;
   .mainBig {
-    height: 100%;
     width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    img {
-      width: 430px;
-      height: auto;
-    }
-    .mainTxt {
-      animation: fadeIn 1.8s 0.8s ease-in-out 1 forwards;
-      opacity: 0;
-      @keyframes fadeIn {
-        from {
-          opacity: 0;
-        }
-        to {
-          opacity: 1;
-        }
+    height: 100%;
+    .mainSmall {
+      height: 100%;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      img {
+        width: 430px;
+        height: auto;
       }
-      text-align: center;
-      font-size: 36px;
-      font-weight: bold;
-      position: absolute;
-      bottom: 50%;
-    }
-    .mainLine {
-      width: 2px;
-      height: 320px;
-      position: absolute;
-      bottom: 80px;
-      background-color: black;
-      animation: showUp 1s;
-      @keyframes showUp {
-        from {
-          height: 0;
+      .mainTxt {
+        animation: fadeIn 1.8s 0.8s ease-in-out 1 forwards;
+        opacity: 0;
+        @keyframes fadeIn {
+          from {
+            opacity: 0;
+          }
+          to {
+            opacity: 1;
+          }
         }
-        to {
-          height: 320px;
+        text-align: center;
+        font-size: 36px;
+        font-weight: bold;
+        position: absolute;
+        bottom: 50%;
+      }
+      .mainLine {
+        width: 2px;
+        height: 320px;
+        position: absolute;
+        bottom: 80px;
+        background-color: black;
+        animation: showUp 1s;
+        @keyframes showUp {
+          from {
+            height: 0;
+          }
+          to {
+            height: 320px;
+          }
         }
       }
     }
   }
-  // <-------------------- contact 스타일값 -------------------->
 
+  // contact 스타일값
   footer {
     width: 100%;
     position: fixed;
@@ -95,7 +99,7 @@
   }
 }
 
-// <-------------------- button 스타일값 -------------------->
+// button 스타일값
 .btn {
   z-index: 999;
   .btnLeft {
@@ -106,6 +110,7 @@
     position: fixed;
     top: 45%;
     transform: rotate(-90deg);
+    left: 0;
   }
   .btnRight {
     font-size: 12px;
@@ -122,11 +127,9 @@
     @keyframes moveBtn {
       0% {
         transform: translateY(0) rotate(-90deg);
-        text-decoration: none;
       }
       50% {
         transform: translateY(4px) rotate(-90deg);
-        text-decoration: none;
       }
       100% {
         transform: translateY(0) rotate(-90deg);
@@ -139,11 +142,9 @@
     @keyframes moveBtn1 {
       0% {
         transform: translateY(0) rotate(90deg);
-        text-decoration: none;
       }
       50% {
         transform: translateY(4px) rotate(90deg);
-        text-decoration: none;
       }
       100% {
         transform: translateY(0) rotate(90deg);
@@ -166,6 +167,7 @@
   transition: transform 0.6s ease-out;
 }
 
+//about누르면 메인이 왼쪽으로 이동하면서 about이 따라오게
 .whenOpenAbout {
   transform: translateX(-100vw);
   transition: transform 1s ease-out;
@@ -174,4 +176,22 @@
 .whenCloseAbout {
   transform: translateX(0px);
   transition: transform 1s ease-out;
+}
+
+.whenOpenProject {
+  transform: translateX(100vw);
+  transition: transform 1s ease-out;
+}
+
+.whenCloseProject {
+  transform: translateX(0px);
+  transition: transform 1s ease-out;
+}
+
+.noLine {
+  text-decoration: none;
+}
+
+.yesLine {
+  text-decoration: line-through;
 }

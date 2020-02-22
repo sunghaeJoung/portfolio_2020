@@ -26,16 +26,3 @@
     }
   }
 }
-
-//about 클릭할때마다 추가되는 스타일값
-//클래스명이 기존 태그에 더하고 빠질때에는 클래스쓸때, 따로 빼주기!
-
-.openAbout {
-  transform: translateX(0);
-  transition: transform 1s ease-out;
-}
-
-.closeAbout {
-  transform: translateX(-100vw);
-  transition: transform 1s ease-out;
-}
